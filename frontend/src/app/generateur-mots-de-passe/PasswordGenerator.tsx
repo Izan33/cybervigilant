@@ -32,15 +32,21 @@ export default function PasswordGenerator() {
         className="w-full p-2 text-black rounded"
       />
       <div className="flex justify-between items-center">
-        <label>Longueur :</label>
-        <input
-          type="number"
-          value={length}
-          onChange={(e) => setLength(parseInt(e.target.value))}
-          className="w-20 text-black p-1 rounded"
-          min={4}
-          max={64}
-        />
+        
+        <label className="text-center block font-semibold text-lg">Nombre de caractères</label>
+
+        <div className="flex items-center justify-center space-x-4">
+          <div className="bg-white text-black px-3 py-1 rounded shadow">{length}</div>
+
+          <input
+            type="range"
+            min="8"
+            max="32"
+            value={length}
+            onChange={(e) => setLength(parseInt(e.target.value))}
+            className="w-full accent-blue-600"
+          />
+        </div>
       </div>
       <div className="space-y-1">
         <label><input type="checkbox" checked={minuscules} onChange={() => setMinuscules(!minuscules)} /> Minuscules</label><br />
