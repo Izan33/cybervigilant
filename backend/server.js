@@ -3,6 +3,7 @@ const cors = require("cors");
 const helmet = require("helmet");
 const morgan = require("morgan");
 const dotenv = require("dotenv");
+const generatePassword = require('./utils/passwordGenerator');
 
 dotenv.config(); // Charger les variables d’environnement
 
@@ -18,6 +19,18 @@ app.use(morgan("dev"));
 app.get("/", (req, res) => {
     res.json({ message: "CyberVigilant API is running!" });
 });
+
+// Route du générateur de mot de passe
+app.get('/api/password/generate', (req, res) => {
+    const length = parseInt(req.query.length) || 12;
+    const minuscules = req.query.minuscules === 'true';
+    const majuscules = req.query.majuscules === 'true';
+    const numbers = req.query.numbers === 'true';
+    const symbols = req.query.symbols === 'true';
+  
+    const password = generatePassword(length, minuscules, majuscules, numbers, symbols);
+    res.json({ password });
+  });
 
 // 🔹 Port du serveur
 const PORT = process.env.PORT || 5000;
