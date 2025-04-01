@@ -4,6 +4,7 @@ import { LogoTicker } from "@/sections/LogoTicker";
 import  Products  from "@/sections/Products";
 import { Pricing } from "@/sections/Pricing";
 import { Testimonials } from "@/sections/Testimonials"
+import { Footer } from "@/sections/Footer"
 
 export default function Home(){
   return (
@@ -14,6 +15,7 @@ export default function Home(){
       <Products />
       <Pricing />
       <Testimonials />
+      <Footer />
     </>
   );
 }
