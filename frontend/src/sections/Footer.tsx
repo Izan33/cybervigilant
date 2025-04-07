@@ -11,7 +11,7 @@ export const Footer = () => {
             <li>Analyse de vulnérabilités</li>
             <li>Simulation d’attaques phishing</li>
             <li>Simulation de ransomware</li>
-            <li>Générateur de mots de passe</li>
+            <li><a href="/generateur-mots-de-passe">Générateur de mots de passe</a></li>
             <li>Surveillance en temps réel</li>
             <li>Formation à la cybersécurité</li>
           </ul>
